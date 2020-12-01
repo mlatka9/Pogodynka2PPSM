@@ -7,12 +7,160 @@
     tools:context=".WeatherActivity">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="236dp"
-        android:layout_height="187dp"
-        android:text="TextView"
+        android:id="@+id/detail4"
+        style="@style/detail"
+        android:text="--.-- °C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailHeader4"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/detailHeader4"
+        style="@style/detailHeader"
+        android:layout_marginTop="24dp"
+        android:text="Temp min"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail3" />
+
+    <TextView
+        android:id="@+id/detail5"
+        style="@style/detail"
+        android:text="--.-- °C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/detail1"
+        app:layout_constraintTop_toBottomOf="@+id/detailHeader5" />
+
+    <TextView
+        android:id="@+id/detailHeader5"
+        style="@style/detailHeader"
+        android:layout_marginTop="20dp"
+        android:text="Temp max"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.829"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topBox" />
+
+    <TextView
+        android:id="@+id/detail3"
+        style="@style/detail"
+        android:text="--.-- %"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailHeader3" />
+
+    <TextView
+        android:id="@+id/detailHeader3"
+        style="@style/detailHeader"
+        android:layout_marginTop="20dp"
+        android:text="Humidity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail2" />
+
+    <TextView
+        android:id="@+id/detail2"
+        style="@style/detail"
+        android:text="--.-- hPa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailHeader2" />
+
+    <TextView
+        android:id="@+id/detailHeader2"
+        style="@style/detailHeader"
+        android:layout_marginTop="20dp"
+        android:text="Pressure"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detail1" />
+
+    <TextView
+        android:background="#E3E3E8"
+        android:id="@+id/topBox"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/detailHeader1"
+        style="@style/detailHeader"
+        android:layout_marginTop="20dp"
+        android:text="Temp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.161"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topBox" />
+
+    <TextView
+        android:id="@+id/detail1"
+        style="@style/detail"
+        android:text="--.-- °C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailHeader1" />
+
+    <TextView
+        android:id="@+id/cityHeader"
+        android:layout_width="98dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="16dp"
+        android:text="city"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cityName"
+        android:layout_width="194dp"
+        android:layout_height="99dp"
+        android:text="city"
+        android:textColor="#07176C"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.19"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cityHeader" />
+
+    <TextView
+        android:id="@+id/cityTime"
+        android:layout_width="56dp"
+        android:layout_height="30dp"
+        android:text="--:--"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/topBox"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cityName"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="175dp"
+        android:layout_height="116dp"
+        app:layout_constraintBottom_toBottomOf="@+id/topBox"
+        app:layout_constraintEnd_toEndOf="@+id/topBox"
+        app:layout_constraintHorizontal_bias="0.82"
+        app:layout_constraintStart_toEndOf="@+id/cityName"
+        app:layout_constraintTop_toTopOf="@+id/topBox"
+        app:layout_constraintVertical_bias="0.411"
+        app:srcCompat="@drawable/weather_icon" />
 </androidx.constraintlayout.widget.ConstraintLayout>
