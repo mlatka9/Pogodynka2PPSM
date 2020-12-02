@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         loadData();
     }
 
-    public void checkWeather(View view) {
+    public void goToWeather(View view) {
         Intent intent = new Intent(this, WeatherActivity.class);
         intent.putExtra("KEY_CITY", editText.getText().toString());
         startActivity(intent);
@@ -46,4 +46,6 @@ public class MainActivity extends AppCompatActivity {
         editText.setText(city);
         textView.setText(message);
     }
+
+
 }

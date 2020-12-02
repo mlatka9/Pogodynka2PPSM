@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.time.LocalTime;
 import java.time.ZoneId;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -18,28 +20,32 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class WeatherActivity extends AppCompatActivity {
 
-    TextView detail1;
-    TextView detail2;
-    TextView detail3;
+    LocalTime localTime;
+
+    @BindView(R.id.detail4)
     TextView detail4;
+    @BindView(R.id.detail5)
     TextView detail5;
+    @BindView(R.id.detail3)
+    TextView detail3;
+    @BindView(R.id.detail2)
+    TextView detail2;
+    @BindView(R.id.topBox)
+    TextView topBox;
+    @BindView(R.id.detail1)
+    TextView detail1;
+    @BindView(R.id.cityName)
     TextView cityName;
+    @BindView(R.id.cityTime)
     TextView cityTime;
 
-    LocalTime localTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
+        ButterKnife.bind(this);
 
-        detail1 = findViewById(R.id.detail1);
-        detail2 = findViewById(R.id.detail2);
-        detail3 = findViewById(R.id.detail3);
-        detail4 = findViewById(R.id.detail4);
-        detail5 = findViewById(R.id.detail5);
-        cityName = findViewById(R.id.cityName);
-        cityTime = findViewById(R.id.cityTime);
 
         localTime = LocalTime.now(ZoneId.of("UTC"));
 
@@ -57,8 +63,6 @@ public class WeatherActivity extends AppCompatActivity {
 
         Call<Post> call = jsonPlaceholderAPI.getPost(city, api, "metric");
 
-        final Intent intentBack = new Intent(this, MainActivity.class);
-
         call.enqueue(new Callback<Post>() {
             @Override
             public void onResponse(Call<Post> call, Response<Post> response) {
@@ -66,7 +70,7 @@ public class WeatherActivity extends AppCompatActivity {
                 if (!response.isSuccessful()) {
                     saveMessage("City name error");
                     saveData("");
-                    startActivity(intentBack);
+                    goToMain();
                     return;
                 }
 
@@ -90,7 +94,7 @@ public class WeatherActivity extends AppCompatActivity {
             public void onFailure(Call<Post> call, Throwable t) {
                 saveMessage("API error");
                 saveData("");
-                startActivity(intentBack);
+                goToMain();
             }
         });
     }
@@ -107,5 +111,10 @@ public class WeatherActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("KEY_MESSAGE", output);
         editor.apply();
+    }
+
+    public void goToMain() {
+        final Intent intentBack = new Intent(this, MainActivity.class);
+        startActivity(intentBack);
     }
 }
